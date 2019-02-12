@@ -9,13 +9,13 @@
 #include <iostream>
 using namespace std;
 int add(int x, int y);
-int substract(int x, int y);
+int subtract(int x, int y);
 int divide(int x, int y);
 int multiply(int x, int y);
 int average(int averge[]);
 int main() {
 	int user_selection;
-	int input_values[] = {};
+	int input_values[2] = {};
 	cout << "Calculator Console Application" << endl;
 	cout << " would you like to :"<<endl;
 	cout << " 1. add"<<endl;
@@ -36,7 +36,7 @@ int main() {
 
 	}
 	if(user_selection == 2){
-	//	subtract();
+		subtract(input_values[0],input_values[1]);
 	}
 
 
@@ -47,8 +47,9 @@ int add(int x, int y){
 	printf("%d+%d=%d",x,y,result);
 	return result;
 }
-int substract(int x, int y){
+int subtract(int x, int y){
 	int result = x-y;
+	printf("%d-%d=%d",x,y,result);
 	return result;
 }
 int divide(int x, int y){
