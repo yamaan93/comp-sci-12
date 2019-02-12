@@ -29,12 +29,13 @@ int main() {
 	cin >> input_values[0];
 	cout <<"what is the second number?"<<endl;
 	cin >> input_values[1];
-	if(user_selection == 128){
+	cout<<user_selection<<endl;
+	if(user_selection == 1){
 
 		add(input_values[0],input_values[1]);
 
 	}
-	else if(user_selection == 2){
+	if(user_selection == 2){
 	//	subtract();
 	}
 
