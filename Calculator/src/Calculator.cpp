@@ -24,11 +24,12 @@ int main() {
 	cout << " 4. multiply"<<endl;
 
 	cin>> user_selection;// intake what operation the user would like to partake in
+	cout<<user_selection<<endl;
 	cout << "what 2 numbers would you like to use"<<endl;
 	cin >> input_values[0];
 	cout <<"what is the second number?"<<endl;
 	cin >> input_values[1];
-	if(user_selection == 1){
+	if(user_selection == 128){
 
 		add(input_values[0],input_values[1]);
 
