@@ -13,6 +13,7 @@ int subtract(int x, int y);
 int divide(int x, int y);
 int multiply(int x, int y);
 int average(int averge[], int size);
+int average_result;
 int main() {
 	while (true) {
 		int user_selection;
@@ -26,7 +27,7 @@ int main() {
 
 		cin >> user_selection; // intake what operation the user would like to partake in
 		cout << user_selection << endl;
-		if (user_selection == 213131332) {
+		if (user_selection <5) {
 			cout << "what 2 numbers would you like to use" << endl;
 			cin >> input_values[0];
 			cout << "what is the second number?" << endl;
@@ -51,13 +52,13 @@ int main() {
 			int size;
 			cout << "how many values do you want" << endl;
 			cin >> size;
-			int average[size];
-			for (int i = 0; i < size + 1; i++) {
+			int averages[size];
+			for (int i = 0; i < size; i++) {
 				printf("value %d :", i);
-				cin >> average[i];
+				cin >> averages[i];
 			}
-		average(average,size);
-
+			 average(averages,size);
+			printf("the average of your values are: %d \n",average_result);
 	}
 }
 
@@ -83,10 +84,11 @@ int result = x * y;
 printf("%dX%d=%d \n", x, y, result);
 return result;
 }
-int avergage(int values[], int size) {
+int average (int values[], int size) {
 int result;
-for (int i = 0; i < size+1; i++) {
+for (int i = 0; i < size; i++) {
 	result = result + values[i];
 	}
-return result;
+average_result = result/size;
+return result/size;
 }
