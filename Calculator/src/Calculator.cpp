@@ -26,12 +26,12 @@ int main() {
 
 		cin >> user_selection; // intake what operation the user would like to partake in
 		cout << user_selection << endl;
-		if(user_selection ==213131332){
-		cout << "what 2 numbers would you like to use" << endl;
-		cin >> input_values[0];
-		cout << "what is the second number?" << endl;
-		cin >> input_values[1];
-		cout << user_selection << endl;
+		if (user_selection == 213131332) {
+			cout << "what 2 numbers would you like to use" << endl;
+			cin >> input_values[0];
+			cout << "what is the second number?" << endl;
+			cin >> input_values[1];
+			cout << user_selection << endl;
 		}
 		if (user_selection == 1) {
 
@@ -56,37 +56,37 @@ int main() {
 				printf("value %d :", i);
 				cin >> average[i];
 			}
-			average(average[].size);
+		average(average,size);
 
-		}
 	}
+}
 
-	return 0;
+return 0;
 }
 int add(int x, int y) {
-	int result = x + y;
-	printf("%d+%d=%d \n", x, y, result);
-	return result;
+int result = x + y;
+printf("%d+%d=%d \n", x, y, result);
+return result;
 }
 int subtract(int x, int y) {
-	int result = x - y;
-	printf("%d-%d=%d \n", x, y, result);
-	return result;
+int result = x - y;
+printf("%d-%d=%d \n", x, y, result);
+return result;
 }
 int divide(int x, int y) {
-	int result = x / y;
-	printf("%d/%d=%d \n", x, y, result);
-	return result;
+int result = x / y;
+printf("%d/%d=%d \n", x, y, result);
+return result;
 }
 int multiply(int x, int y) {
-	int result = x * y;
-	printf("%dX%d=%d \n", x, y, result);
-	return result;
+int result = x * y;
+printf("%dX%d=%d \n", x, y, result);
+return result;
 }
 int avergage(int values[], int size) {
-	int result;
-	for (int i = 0; i < size; i++) {
-
+int result;
+for (int i = 0; i < size+1; i++) {
+	result = result + values[i];
 	}
-	return result;
+return result;
 }
