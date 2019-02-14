@@ -24,6 +24,7 @@ int main() {
 		cout << " 2. subtract" << endl;
 		cout << " 3. divide" << endl;
 		cout << " 4. multiply" << endl;
+		cout << " 5. average" << endl;
 
 		cin >> user_selection; // intake what operation the user would like to partake in
 		cout << user_selection << endl;
@@ -85,10 +86,11 @@ printf("%dX%d=%d \n", x, y, result);
 return result;
 }
 int average (int values[], int size) {
-int result;
+	cout<<size<<endl;
+int result = 0;
 for (int i = 0; i < size; i++) {
 	result = result + values[i];
 	}
 average_result = result/size;
-return result/size;
+return average_result;
 }
