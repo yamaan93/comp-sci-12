@@ -1,9 +1,8 @@
 //============================================================================
 // Name        : Calculator.cpp
 // Author      : Yamaan
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Date        : 2/15/2019
+// Description : Calculator project
 //============================================================================
 
 #include <iostream>
@@ -16,6 +15,7 @@ double divide(double x, double y);
 double multiply(double x, double y);
 double average(int averge[], int size);
 double area();
+const double pi = 3.1415269;
 double average_result;
 int main() {
 	printf("\n \n \n \n");
@@ -33,13 +33,15 @@ int main() {
 
 		cin >> user_selection; // intake what operation the user would like to partake in
 		cout << user_selection << endl;
-		if (user_selection !=5 && user_selection !=6) {
+		if (user_selection !=5 && user_selection !=6) {// if not either of the special functions
+			// ask the user for there 2 numbers
 			cout << "what 2 numbers would you like to use" << endl;
 			cin >> input_values[0];
 			cout << "what is the second number?" << endl;
 			cin >> input_values[1];
 			cout << user_selection << endl;
 		}
+		//calls the functions
 		if (user_selection == 1) {
 
 			add(input_values[0], input_values[1]);
@@ -58,13 +60,13 @@ int main() {
 			int size;
 			cout << "how many values do you want" << endl;
 			cin >> size;
-			int averages[size];
+			int averages[size];// determines the size of the array based on the number of values the user wants to find the average of
 			for (int i = 0; i < size; i++) {
 				printf("value %d :", i);
 				cin >> averages[i];
 			}
 			 average(averages,size);
-			printf("the average of your values are: %f \n",average_result);
+			printf("the average of your values are: %f \n",average_result);// prints out the  result
 	}
 		if(user_selection ==6){
 			area();
@@ -73,6 +75,7 @@ int main() {
 
 return 0;
 }
+// the functions
 double add(double x, double y) {
 double result = x + y;
 printf("%f+%f=%f \n", x, y, result);
@@ -114,7 +117,7 @@ double area(){
 		double radius;
 		cout<<"enter radius"<<endl;
 		cin>>radius;
-		area = 3.1415269*radius*radius;
+		area = pi*radius*radius;
 		cout<<area<<endl;
 	}
 	if(user_shape==2 ){//rectangle
@@ -132,7 +135,7 @@ double area(){
 		cout<<"enter side base"<<endl;
 		cin>>x;
 		double y;
-		cout<<"side hight:"<<endl;
+		cout<<"side height:"<<endl;
 		cin>>y;
 		double z = x*y;
 		area = z/2;
