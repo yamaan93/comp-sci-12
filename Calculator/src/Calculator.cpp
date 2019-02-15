@@ -33,8 +33,8 @@ int main() {
 
 		cin >> user_selection; // intake what operation the user would like to partake in
 		cout << user_selection << endl;
-		if (user_selection !=5 && user_selection !=6) {// if not either of the special functions
-			// ask the user for there 2 numbers
+		if (user_selection != 5 && user_selection != 6) { // if not either of the special functions
+		// ask the user for there 2 numbers
 			cout << "what 2 numbers would you like to use" << endl;
 			cin >> input_values[0];
 			cout << "what is the second number?" << endl;
@@ -60,85 +60,85 @@ int main() {
 			int size;
 			cout << "how many values do you want" << endl;
 			cin >> size;
-			int averages[size];// determines the size of the array based on the number of values the user wants to find the average of
+			int averages[size];	// determines the size of the array based on the number of values the user wants to find the average of
 			for (int i = 0; i < size; i++) {
 				printf("value %d :", i);
 				cin >> averages[i];
 			}
-			 average(averages,size);
-			printf("the average of your values are: %f \n",average_result);// prints out the  result
-	}
-		if(user_selection ==6){
+			average(averages, size);
+			printf("the average of your values are: %f \n", average_result);// prints out the  result
+		}
+		if (user_selection == 6) {
 			area();
 		}
-}
+	}
 
-return 0;
+	return 0;
 }
 // the functions
 double add(double x, double y) {
-double result = x + y;
-printf("%f+%f=%f \n", x, y, result);
-return result;
+	double result = x + y;
+	printf("%f+%f=%f \n", x, y, result);
+	return result;
 }
 double subtract(double x, double y) {
-double result = x - y;
-printf("%f-%f=%f \n", x, y, result);
-return result;
+	double result = x - y;
+	printf("%f-%f=%f \n", x, y, result);
+	return result;
 }
 double divide(double x, double y) {
-double result = x / y;
-printf("%f/%f=%f \n", x, y, result);
-return result;
+	double result = x / y;
+	printf("%f/%f=%f \n", x, y, result);
+	return result;
 }
 double multiply(double x, double y) {
-double result = x * y;
-printf("%fX%f=%f \n", x, y, result);
-return result;
+	double result = x * y;
+	printf("%fX%f=%f \n", x, y, result);
+	return result;
 }
-double average (int values[], int size) {
-	cout<<size<<endl;
-double result = 0;
-for (int i = 0; i < size; i++) {
-	result = result + values[i];
+double average(int values[], int size) {
+	cout << size << endl;
+	double result = 0;
+	for (int i = 0; i < size; i++) {
+		result = result + values[i];
 	}
-average_result = result/size;
-return average_result;
+	average_result = result / size;
+	return average_result;
 }
-double area(){
+double area() {
 	int user_shape;
 	double area;
-	cout<<"which shape would you like?"<<endl;
-	cout<<"1. circle"<< endl;
-	cout<<"2.rectangle"<< endl;
-	cout<<"triangle"<< endl;
-	cin>>user_shape;
-	if(user_shape==1 ){//circle
+	cout << "which shape would you like?" << endl;
+	cout << "1. circle" << endl;
+	cout << "2.rectangle" << endl;
+	cout << "triangle" << endl;
+	cin >> user_shape;
+	if (user_shape == 1) {			//circle
 		double radius;
-		cout<<"enter radius"<<endl;
-		cin>>radius;
-		area = pi*radius*radius;
-		cout<<area<<endl;
+		cout << "enter radius" << endl;
+		cin >> radius;
+		area = pi * radius * radius;
+		cout << area << endl;
 	}
-	if(user_shape==2 ){//rectangle
+	if (user_shape == 2) {			//rectangle
 		double x;
-		cout<<"enter side lenth 1:"<<endl;
-		cin>>x;
+		cout << "enter side lenth 1:" << endl;
+		cin >> x;
 		double y;
-		cout<<"side length 2:"<<endl;
-		cin>>y;
-		area = y*x;
+		cout << "side length 2:" << endl;
+		cin >> y;
+		area = y * x;
 
-		}
-	if(user_shape==3 ){//triangle
+	}
+	if (user_shape == 3) {			//triangle
 		double x;
-		cout<<"enter side base"<<endl;
-		cin>>x;
+		cout << "enter side base" << endl;
+		cin >> x;
 		double y;
-		cout<<"side height:"<<endl;
-		cin>>y;
-		double z = x*y;
-		area = z/2;
-		}
+		cout << "side height:" << endl;
+		cin >> y;
+		double z = x * y;
+		area = z / 2;
+	}
 	return area;
 }
