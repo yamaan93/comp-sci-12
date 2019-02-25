@@ -7,24 +7,98 @@
 //============================================================================
 
 #include <iostream>
+#include <string>
+
 using namespace std;
 
-int main() {
+int main()
+{
+  const int array_2_size = 2;
+  const int dynamic_array_size = 3;
+  const int pointer_array_size = 2;
+  const int ptrparameter_size = 3;
+  void pointer_parameter(const string *p);
+  string pointer_array();
+
+    // Using the sentinel value "x" to determine the end of the array.
+ string sentintel[] = {"Software engineers are responsible for designing, analyzing and optimizing software and software architecture.\n",
+ "Software engineers incorporate both programming and engineering design philosophy to create reliable programs and systems on a large scale.\n", "x"};
+
+ //Array declared on the stack using the #define pre-processor directive to create maintainable code (fixed size)
+ string on_stack[array_2_size] = {"At the University of Waterloo, the Software Engineering program has an admission average in the mid-90s.",
+ "It requires high school Physics, Chemistry, Calculus and Advanced Functions.\n"};
+
+ //This array is dynamically allocated. See below for when the memory is freed (the strings it prints only need to be printed once).
+ string *dynamic_allocation = new string[dynamic_array_size];
+ dynamic_allocation[0] = "The program takes an average of 4⅔ years to complete, including the co-op program. ";
+ dynamic_allocation[1] = "The tuition at UWaterloo is $18,250 per year, with an estimated $2,150 in books.\n";
+ dynamic_allocation[2] = "During co-op, students usually earn about $17,000 per term to offset costs. ";
+
+ //This array simply exists to demonstrate knowledge of using pointers to reference arrays.
+ string for_pointers[pointer_array_size] = {"The average salary for Canadian software engineers is $71,397 per year.\n", "The day-to-day life of a software engineer involves coordinating with design and development teams to ensure logical, safe implementation of ideas into projects.\n"};
+ string *strPtr;
+ strPtr = for_pointers;
+
+ string ptr_parameter[ptrparameter_size] = {"High-profile companies like Microsoft and Google regularly hire software engineers for this purpose, as their teams and projects are very large and all require management.\n","Overall, software engineers have a difficult but rewarding career.",
+ "It is a very difficult career to enter, as education is incredibly competitive and the job market is saturated,\nbut those who do make it enjoy higher-range salaries and control over their work.\n\n"};
+
+ //I made this constant so that I wouldn't get my pointers mixed up.
+ const string *strPtr2 = ptr_parameter;
+
+ for (int i = 0; sentintel[i] != "x"; i++) {
+     cout << sentintel[i];
+ }
+
+ for (int i = 0; i < array_2_size; i++) {
+     cout << on_stack[i];
+ }
+
+ for (int i = 0; i < dynamic_array_size; i++) {
+     cout << dynamic_allocation[i];
+ }
 
 
-	 char research1[] = {"The field of computer science and engineering is a massive field with a virtually infinite job opportunities. From I.T technicians whose role is to insure that systems being used at their workplace remain maintained and fix any problems that their co-workers may encounter, to lead developers who plan and create programs that millions of people use and depend on.  One of the most popular post secondary fields in post secondary, mainly university, would be the software developer position. In order to become a software developer, you will require a degree in computer science, or a similar field. A computer science degree takes 3-4 years to complete, and cost about  $9,000 dollars a year, but it varies depending on the program. But having a degree is usually not enough to be hired as a software developer. Employers look for people with a lot of personal programming experience, who work on their own projects often. Thus, it is important that if you want to be hired as a software developer, you must build yourself online repositories of your personal programs in order for employers to see your experience. Once you land a job however, you can expect a starting salary of  $48,750 a year to start, but the average salary after a few years of experience is $90,000. Since developers are not normally unionized, benefits vary a lot between employers, and as such cannot be listed.  A day in the life of a software developer tends to vary depending on the position. On average, software developers report that their work place is pretty lax, and they have flexible work hours, but again, this all varies based on the employer. "};// using this as a reference for size of array
-	    char* research1ptr = new char [sizeof(research1)/sizeof(research1[0])];
-	    research1ptr = research1; // research1ptr is in the freestore
-	    char research2[] = {"Computer vision has become a massive success in the computer and automotive world. The ability for computers and cameras to recognize objects has allowed automotive companies to do a large variety of things from basic driver assist,  to fully autonomous driving cars. Computer vision is a field that focuses on taking feedback from the real world, and transforming it into a set of data that a computer can understand. This field has exploded in popularity in the automotive world in the last decade, with the rising race to full autonomous driving. Computer vision in cars has been used for a lot more simple tasks than full autonomous driving and cars have used them for years. For example, cars within the last decade have taken advantage of computer vision to recognize street signs, and intern provide drivers with warnings such as noting an approaching stop sign or warning the driver that they are speeding above the posted limit. This is made possible by computers abilities to recognize what objects are from pictures. This is a complex process, and cannot be explained in 250 words but the basics of it are quite simple. The software developers create a program that looks for key points in a picture. But that program starts off far from perfect, and needs its values to be tuned. Then they create a second program to provide the first program with examples of signs to look for, for example stop signs. Every time the tuning values are changed, and the values keep being tested and tuned, until the developers are confident  that now their program can recognize what they want. z"};
-	    char* research2ptr = new char [sizeof(research2)/sizeof(research2[0])];
-	    research2ptr = research2;
+ for (int i = 0; i < pointer_array_size; i++) {
+     cout << *strPtr;
+     strPtr++;
+ }
 
-	    //cout << (sizeof(research1)/sizeof(research1[0])) + (sizeof(research2)/sizeof(research2[0])) << endl;
+ delete []dynamic_allocation; //Freeing memory
 
-	    char* full_research = new char[(sizeof(research1ptr)/sizeof(research1ptr[0])) + (sizeof(research2ptr)/sizeof(research2ptr[0]))];
-	    full_research[0] = *research1ptr;
-	    full_research[1] = *research2ptr;
+ pointer_parameter(strPtr2);
 
-	    cout << 1+full_research << endl;
-	return 0;
+
+ if (bioarray1 == NULL) {
+     cout << "Error with output.";
+ } else {
+     for (int i = 0; bioarray1[i] != "x"; i++) {
+         cout << bioarray1[i];
+     }
+ }
+
+
 }
+
+//This function just gets passed a pointer and uses some arithmetic to print out the elements of an array
+void pointer_parameter(const string *ptr) {
+    for (int i = 0; i < 3; i++) {
+        cout << *ptr;
+        *ptr++;
+    }
+}
+
+string *pointer_array() {
+
+   string *returnarray = new string[5];
+
+   returnarray[0] = "Bioinformatics incorporates computer science and biology to track and manage biological data.\n";
+   returnarray[1] = "Bioinformaticians create algorithms and simulations to better visualize and track complex data and concepts.\n";
+   returnarray[2] = "Typically, a Ph.D is necessary to become a bioinformatician, as there is a very high level of sophistication involved with both\n";
+   returnarray[3] = "the computer science and the biology parts of the field.\n";
+   returnarray[4] = "x";
+
+
+   return returnarray;
+
+}
+
