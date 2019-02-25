@@ -11,7 +11,7 @@
 using namespace std;
 char* heres_the_function(char* text);
 void sentinel(const char text[]);
-#define array2size 1589
+#define array2size 1589 //defines array size
 int main() {
 
 	char research1[] =
@@ -23,19 +23,18 @@ int main() {
 			{
 					"Computer vision has become a massive success in the computer and automotive world. The ability for computers and cameras to recognize objects has allowed automotive companies to do a large variety of things from basic driver assist,  to fully autonomous driving cars. Computer vision is a field that focuses on taking feedback from the real world, and transforming it into a set of data that a computer can understand. This field has exploded in popularity in the automotive world in the last decade, with the rising race to full autonomous driving. Computer vision in cars has been used for a lot more simple tasks than full autonomous driving and cars have used them for years. For example, cars within the last decade have taken advantage of computer vision to recognize street signs, and intern provide drivers with warnings such as noting an approaching stop sign or warning the driver that they are speeding above the posted limit. This is made possible by computers abilities to recognize what objects are from pictures. This is a complex process, and cannot be explained in 250 words but the basics of it are quite simple. The software developers create a program that looks for key points in a picture. But that program starts off far from perfect, and needs its values to be tuned. Then they create a second program to provide the first program with examples of signs to look for, for example stop signs. Every time the tuning values are changed, and the values keep being tested and tuned, until the developers are confident  that now their program can recognize what they want. !" };
 	char* research2ptr = new char[1589];
-	research2ptr = research2;
+	research2ptr = research2;//research2prt is in the stack
 
 	//cout << (sizeof(research1)/sizeof(research1[0])) + (sizeof(research2)/sizeof(research2[0])) << endl;
 
-	char** full_research = new char*[(sizeof(research1ptr)
+	char** full_research = new char*[(sizeof(research1ptr) // creates a double pointer
 			/ sizeof(research1ptr[0]))
 			+ (sizeof(research2ptr) / sizeof(research2ptr[0]))];
-	full_research[0] = research1ptr;
+	full_research[0] = research1ptr; // adds pointers to research to a second pointer
 	full_research[1] = research2ptr;
 
-	//cout << *(0+full_research) << endl;
 	cout << heres_the_function(*(full_research)) << endl;
-	delete research1ptr;
+	delete research1ptr; // clears the memeory
 	delete full_research;
 	cout << "" << endl;
 	sentinel(research2);
@@ -43,12 +42,12 @@ int main() {
 }
 
 char* heres_the_function(char*text) {
-	//here i have taken a pointer perameter and returned it
+	//here i have taken a pointer parameter and returned it
 
 	return text;
 }
 void sentinel(const char text[]) {
-	for (int i = 0; text[i] != '!'; i++) {
+	for (int i = 0; text[i] != '!'; i++) { // places a space at the end of each sentance for easy reading
 		cout << text[i];
 		if (text[i] == '.') {
 			cout << "" << endl;
