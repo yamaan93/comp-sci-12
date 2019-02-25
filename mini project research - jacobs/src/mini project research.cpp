@@ -7,9 +7,8 @@
 //============================================================================
 
 #include <iostream>
-#include <string>
 using namespace std;
-char heres_the_function(char* text);
+
 int main() {
 
 
@@ -22,15 +21,10 @@ int main() {
 
 	    //cout << (sizeof(research1)/sizeof(research1[0])) + (sizeof(research2)/sizeof(research2[0])) << endl;
 
-	    char** full_research = new char*[(sizeof(research1ptr)/sizeof(research1ptr[0])) + (sizeof(research2ptr)/sizeof(research2ptr[0]))];
-	      full_research[0] = research1ptr;
-	      full_research[1] = research2ptr;
+	    char* full_research = new char[(sizeof(research1ptr)/sizeof(research1ptr[0])) + (sizeof(research2ptr)/sizeof(research2ptr[0]))];
+	    full_research[0] = *research1ptr;
+	    full_research[1] = *research2ptr;
 
-	      cout << *(0+full_research) << endl;
-	      heres_the_function(*(full_research));
+	    cout << 1+full_research << endl;
 	return 0;
-}
-
-char heres_the_function(char*text){
-
 }
