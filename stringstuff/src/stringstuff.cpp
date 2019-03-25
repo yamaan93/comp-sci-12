@@ -30,7 +30,7 @@ int main() {
    }
 
    */
-   int ticks=0;
+
    for(int i=0;!feof(fPtr); i++) {
 
        // fscanf() returns the number of items successfully read
@@ -39,8 +39,8 @@ int main() {
           return 0;
        }
 
-       ticks++;
       cout<<a[i]<<endl;
+      fprintf(fPtr1, " %s ", a[i]);
     }
 
 
@@ -49,5 +49,12 @@ int main() {
       printf("Error closing file\n");
       return 0;
    }
+   if (fclose(fPtr1) != 0) {
+    /* fclose() returns non-zero on failure, 0 on success */
+
+       printf("Error closing file\n");
+       return 1;
+
+    }
 
 }
