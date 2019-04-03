@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.820081712/MINGW_HOME\ \ \ C\:\\MINGW/delimiter=;
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.820081712/MINGW_HOME\ \ \ C\:\\MINGW/operation=append
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.820081712/MINGW_HOME\ \ \ C\:\\MINGW/value=PATH   C\:\\MinGW\\bin;C\:\\MinGW\\msys\\1.0\\bin
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.820081712/append=true
+environment/project/cdt.managedbuild.config.gnu.cross.exe.debug.820081712/appendContributed=true

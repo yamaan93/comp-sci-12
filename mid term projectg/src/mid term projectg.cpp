@@ -50,6 +50,7 @@ int main()
 	 }
 }
 void add(){
+	if(student_count <29){
 	char name1[10];
 	char name2[10];
 	int grade;
@@ -77,10 +78,14 @@ void add(){
 		printf("\n enter how much you like them \n");
 		cin>>like;
 		list[student_count].likability = like;
+	}
+	else{
+		printf("\n sorry you cannot add more people to the list, you are out of storage \n");
+	}
 }
 void list_items(){
 	 for(int i = 0; i<student_count; i++){
-		 printf("\n student number: %d",student_count);
+		 printf("\n \n student number: %d",i);
 		 printf("\n First name: %s",list[i].first_name);
 		 printf("\n Last name: %s",list[i].last_name);
 		 printf("\n Mark: %d",list[i].mark);
@@ -91,6 +96,13 @@ void list_items(){
 }
 void delete_list(){
 	int user_selection =0;
+	list_items();
 	printf("please enter the number of the student you want to delete ? \n");
+	cin>>user_selection;
+
+	for(int i = user_selection; i>30; i++){
+		printf("re");
+		list[i]= list[i+1];
+	}
 
 }
