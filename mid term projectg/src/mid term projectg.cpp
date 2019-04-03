@@ -15,6 +15,7 @@ struct person{
 	char last_name[10];
 	int mark;
 	int age;
+	int likability;
 };
 
 person *list = new person[30]; // 30 students to match the new doug ford education plan
@@ -23,6 +24,7 @@ int run = 1; // to kill the program later
 int student_count = 0;
 
 void add();
+void delete_list();
 void list_items();
 int main()
 {
@@ -40,7 +42,7 @@ int main()
 				student_count++;
 		 }
 		 if(user_choice == 3){
-			 // delete student
+			 delete_list();
 		 }
 		 if(user_choice == 4){
 			 // edit student
@@ -52,6 +54,7 @@ void add(){
 	char name2[10];
 	int grade;
 	int oldness;
+	int like;
 	//**************************************
 	printf("\n enter a first name \n");
 	cin>>name1;
@@ -70,13 +73,24 @@ void add(){
 	printf("\n enter their age \n");
 	cin>>oldness;
 	list[student_count].age = oldness;
+	//***************************************
+		printf("\n enter how much you like them \n");
+		cin>>like;
+		list[student_count].likability = like;
 }
 void list_items(){
 	 for(int i = 0; i<student_count; i++){
+		 printf("\n student number: %d",student_count);
 		 printf("\n First name: %s",list[i].first_name);
 		 printf("\n Last name: %s",list[i].last_name);
 		 printf("\n Mark: %d",list[i].mark);
 		 printf("\n age: %d",list[i].age);
+		 printf("\n how much you like them: %d",list[i].likability);
 	 }
+
+}
+void delete_list(){
+	int user_selection =0;
+	printf("please enter the number of the student you want to delete ? \n");
 
 }
