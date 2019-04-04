@@ -25,7 +25,8 @@ int student_count = 0;
 
 void add();
 void delete_list();
-void list_items();
+void list_items(int full);
+void edit();
 int main()
 {
 	int user_choice = 0;
@@ -34,7 +35,7 @@ int main()
 		 printf("what would you like \n  1.list \n 2. add  \n 3. delete \n 4.edit \n");
 		 cin>>user_choice;
 		 if(user_choice == 1){
-			list_items();
+			list_items(1);
 
 		 }
 		 if(user_choice == 2){
@@ -83,26 +84,43 @@ void add(){
 		printf("\n sorry you cannot add more people to the list, you are out of storage \n");
 	}
 }
-void list_items(){
+void list_items(int full){
 	 for(int i = 0; i<student_count; i++){
 		 printf("\n \n student number: %d",i);
 		 printf("\n First name: %s",list[i].first_name);
 		 printf("\n Last name: %s",list[i].last_name);
+		 if(full ==1){
 		 printf("\n Mark: %d",list[i].mark);
 		 printf("\n age: %d",list[i].age);
 		 printf("\n how much you like them: %d",list[i].likability);
+		 }
 	 }
 
 }
 void delete_list(){
 	int user_selection =0;
-	list_items();
-	printf("please enter the number of the student you want to delete ? \n");
+	list_items(0);
+	printf("\n please enter the number of the student you want to delete ? \n");
 	cin>>user_selection;
 
-	for(int i = user_selection; i>30; i++){
+	for(int i = user_selection; i<30; i++){
 		printf("re");
 		list[i]= list[i+1];
+	}
+
+	student_count--;
+}
+void edit(){
+	int user_selection = 0;
+	printf("\n who would you like to edit");
+	list_items(0);
+	cin>>user_selection;
+	printf("\n edit:\n 1. first name \n 2. last name\n 3. mark\n 4. age\n 5. likability\n");
+	cin>>user_selection;
+	if(user_selection==1){
+		char new_name[10];
+		cin>>new_name;
+
 	}
 
 }
