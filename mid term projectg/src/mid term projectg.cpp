@@ -11,8 +11,8 @@ using namespace std;
 #include <string.h>
 //struct for each person in the address book
 struct person{
-	char first_name[10]; // if your first name is longer than 10 letters, too bad
-	char last_name[10];
+	char first_name[20]; // if your first name is longer than 20 letters, get a new one
+	char last_name[20];
 	int mark;
 	int age;
 	int likability;
@@ -46,27 +46,27 @@ int main()
 			 delete_list();
 		 }
 		 if(user_choice == 4){
-			 // edit student
+			 edit();
 		 }
 	 }
 }
 void add(){
 	if(student_count <29){
-	char name1[10];
-	char name2[10];
+	char name1[20];
+	char name2[20];
 	int grade;
 	int oldness;
 	int like;
 	//**************************************
 	printf("\n enter a first name \n");
 	cin>>name1;
-	strncpy(list[student_count].first_name, name1,9);
-	list[student_count].first_name[9] = 0;
+	strncpy(list[student_count].first_name, name1,19);
+	list[student_count].first_name[19] = 0;
 	//**************************************
 	printf("\n enter last name \n");
 	cin>>name2;
-	strncpy(list[student_count].last_name, name2,9);
-	list[student_count].last_name[9] = 0;
+	strncpy(list[student_count].last_name, name2,19);
+	list[student_count].last_name[19] = 0;
 	//***************************************
 	printf("\n enter their mark \n");
 	cin>>grade;
@@ -111,16 +111,40 @@ void delete_list(){
 	student_count--;
 }
 void edit(){
-	int user_selection = 0;
+	if(student_count==0){
+		printf("\n you cannot edit what does not exist \n");
+	}
+	else{
+	int student_selection = 0;
+	int user_selection =0;
 	printf("\n who would you like to edit");
 	list_items(0);
-	cin>>user_selection;
+	cin>>student_selection;
 	printf("\n edit:\n 1. first name \n 2. last name\n 3. mark\n 4. age\n 5. likability\n");
 	cin>>user_selection;
 	if(user_selection==1){
-		char new_name[10];
+		char new_name[20];
 		cin>>new_name;
+		strncpy(list[student_selection].first_name, new_name,9);
+			list[student_selection].first_name[9] = 0;
 
 	}
+	if(user_selection==2){
+			char new_name[20];
+			cin>>new_name;
+			strncpy(list[student_selection].last_name, new_name,19);
+				list[student_selection].first_name[19] = 0;
 
+		}
+	if(user_selection==3){
+				char new_mark;
+				cin>>new_mark;
+				list[student_selection].mark = new_mark;
+			}
+	if(user_selection==4){
+					char new_likability;
+					cin>>new_likability;
+					list[student_selection].likability = new_likability;
+				}
+	}
 }
