@@ -22,6 +22,24 @@ person *list = new person[30]; // 30 students to match the new doug ford educati
 
 int run = 1; // to kill the program later
 int student_count = 0;
+int save(){
+	cout<<"saving..."<<endl;
+#define FILENAME "C:\\Users\\Yamaan\\Documents\\markbook.txt"
+	 FILE *fPtr;
+	 if ((fPtr = fopen(FILENAME, "w")) == NULL) {
+	      printf("Error opening file\n");
+	      return 1;
+
+	   }
+	 printf(list[0].first_name);
+	  if (fprintf(fPtr, "%s", list[0].first_name) < 0) {
+
+	     printf("Error writing file\n");
+	     return 0;
+
+	  }
+	   return 0;
+}
 
 void add();
 void delete_list();
@@ -32,7 +50,7 @@ int main()
 	int user_choice = 0;
 	 while(run ==1){
 		 cout<<" \n Welcome to mark book 2.0"<<endl;
-		 printf("what would you like \n  1.list \n 2. add  \n 3. delete \n 4.edit \n");
+		 printf("what would you like \n  1.list \n 2. add  \n 3. delete \n 4.edit \n 5.save \n");
 		 cin>>user_choice;
 		 if(user_choice == 1){
 			list_items(1);
@@ -48,6 +66,9 @@ int main()
 		 if(user_choice == 4){
 			 edit();
 		 }
+		 if(user_choice == 5){
+			 save();
+			 }
 	 }
 }
 void add(){
