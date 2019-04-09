@@ -1,11 +1,3 @@
-//============================================================================
-// Name        : mid.cpp
-// Author      : Yamaan Bakir
-// Version     :
-// Copyright   : dont copy plz
-// Description : Mark book program for mid term project
-//============================================================================
-
 #include <iostream>
 using namespace std;
 #include <string.h>
@@ -18,14 +10,14 @@ struct person{
 	int age;
 	int likability;
 };
-
+#define FILENAME "C:\\Users\\Yamaan\\Documents\\markbook.txt"
 person *list = new person[30]; // 30 students to match the new doug ford education plan
 
 int run = 1; // to kill the program later
 int student_count = 0;
 int save(){
 	cout<<"saving..."<<endl;
-#define FILENAME "C:\\Users\\Yamaan\\Documents\\markbook.txt"
+
 	 FILE *fPtr;
 	 if ((fPtr = fopen(FILENAME, "w")) == NULL) {
 	      printf("Error opening file\n");
@@ -198,8 +190,7 @@ void edit(){
 	}
 }
 void reader(){
-#define FILENAME "C:\\Users\\Yamaan\\Documents\\markbook.txt"
-#define FILENAME "C:\\Users\\Yamaan\\Documents\\markbook.txt"
+
 	 FILE *fPtr;
 	 cout<<"reading in data"<<endl;
 	 if ((fPtr = fopen(FILENAME, "r")) == NULL) {
