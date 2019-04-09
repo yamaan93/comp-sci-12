@@ -210,7 +210,9 @@ void reader(){
 			 (fscanf(fPtr, "%d", &list[i].mark) != 1)||(fscanf(fPtr, "%d", &list[i].age) != 1)||(fscanf(fPtr, "%d", &list[i].likability )!= 1)) {
 	      printf("Error reading file\n");
 	   }
+	 else{
 	 student_count++;
+	 }
 	 }
 
 	 if (fclose(fPtr) != 0) {
