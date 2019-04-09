@@ -9,6 +9,7 @@
 #include <iostream>
 using namespace std;
 #include <string.h>
+#include <fstream>
 //struct for each person in the address book
 struct person{
 	char first_name[20]; // if your first name is longer than 20 letters, get a new one
@@ -31,13 +32,38 @@ int save(){
 	      return 1;
 
 	   }
-	 printf(list[0].first_name);
-	  if (fprintf(fPtr, "%s", list[0].first_name) < 0) {
-
+	 for(int i =0; i <student_count;i++){
+	  if (fprintf(fPtr, "%s\n", list[i].first_name) < 0) {
 	     printf("Error writing file\n");
 	     return 0;
 
 	  }
+	  if (fprintf(fPtr, "%s\n", list[i].last_name) < 0) {
+	  	     printf("Error writing file\n");
+	  	     return 0;
+
+	  	  }
+	  if (fprintf(fPtr, "%d\n", list[i].mark) < 0) {
+	  	     printf("Error writing file\n");
+	  	     return 0;
+
+	  	  }
+	  if (fprintf(fPtr, "%d\n", list[i].age) < 0) {
+	  	     printf("Error writing file\n");
+	  	     return 0;
+
+	  	  }
+	  if (fprintf(fPtr, "%d\n", list[i].likability) < 0) {
+	  	  	     printf("Error writing file\n");
+	  	  	     return 0;
+
+	  	  	  }
+	 }
+	  if (fclose(fPtr) != 0) {
+	        printf("Error closing file\n");
+	        return 1;
+
+	     }
 	   return 0;
 }
 
@@ -45,8 +71,10 @@ void add();
 void delete_list();
 void list_items(int full);
 void edit();
+void reader();
 int main()
 {
+	reader();
 	int user_choice = 0;
 	 while(run ==1){
 		 cout<<" \n Welcome to mark book 2.0"<<endl;
@@ -168,4 +196,24 @@ void edit(){
 					list[student_selection].likability = new_likability;
 				}
 	}
+}
+void reader(){
+#define FILENAME "C:\\Users\\Yamaan\\Documents\\markbook.txt"
+#define FILENAME "C:\\Users\\Yamaan\\Documents\\markbook.txt"
+	 FILE *fPtr;
+	 cout<<"reading in data"<<endl;
+	 if ((fPtr = fopen(FILENAME, "r")) == NULL) {
+	      printf("Error opening file\n");
+	   }
+	 for(int i= 0;!feof(fPtr);i++ ){
+	 if ((fgets(list[i].first_name, 20, fPtr) == NULL) || (fgets(list[i].last_name, 10, fPtr) == NULL)||
+			 (fscanf(fPtr, "%d", &list[i].mark) != 1)||(fscanf(fPtr, "%d", &list[i].age) != 1)||(fscanf(fPtr, "%d", &list[i].likability )!= 1)) {
+	      printf("Error reading file\n");
+	   }
+	 student_count++;
+	 }
+
+	 if (fclose(fPtr) != 0) {
+	      printf("Error closing file\n");
+	   }
 }
