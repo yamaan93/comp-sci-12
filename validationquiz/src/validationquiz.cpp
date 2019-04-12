@@ -17,8 +17,6 @@ using namespace std;
 int main() {
 	int run = 1;
 	char buffer[100];
-
-	char alphabet[53]={"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
 	cout << "please enter your license plate, dont mess up!!" << endl;
 	while(run==1){
 	int letters_matched =0;
@@ -32,10 +30,9 @@ int main() {
 	      }
 
 	      for(int i = 0; i<4;i++){
-			  for(int j =0; j<53;j++){
-	     	    if(buffer[i]==alphabet[j]){
-	     	    	letters_matched++;
-	     	    }
+	    	  if(isalpha(buffer[i])){
+					letters_matched++;
+
 			  }
 		  }
 	      if(letters_matched != 4){
@@ -53,7 +50,7 @@ int main() {
 	      }
 	      if(numbers_matched ==3){
 	    	  for(int i =0; i<4;i++){
-	    		  toupper(buffer[i]);
+	    		buffer[i]=  toupper(buffer[i]);
 	    	  }
 	    	  cout<<"congrats your capable of entering a license plate"<<endl;
 	    	  cout<<"your license plate is: ";
