@@ -10,7 +10,7 @@
 #include <string>
 using namespace std;
 int word_count(string in);
-string search_replace(string in[][]);
+string search_replace(string *in);
 int main() {
 	string boi = "boi is go";
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
@@ -35,4 +35,12 @@ int word_count(string in){
 	}
 
 	return word;
+}
+string* search_replace(string*in, string key,string replacement, int wordcount){
+	for(int i=0; i <wordcount;i++){
+		if(in[i]==key){
+			in[i]=replacement;
+		}
+		}
+	return in;
 }
