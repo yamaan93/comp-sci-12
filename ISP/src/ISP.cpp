@@ -11,18 +11,18 @@
 #include <fstream>
 using namespace std;
 string readCSV(){
-	string in;
-	int count = 0;
+	string input;
 	string line;
 	ifstream myfile;
 	myfile.open("test.csv");
-	while(myfile.good()){
-		count ++;
+	for(int i = 0;myfile.good(); i++){
 		getline(myfile, line, ',');
+		input[i]=line[0];
+		cout<<i<<": "<<input[i]<<endl;
 	}
-
+	cout<<"input: "<<input<<endl;
 	myfile.close();
-	return in;
+	return input;
 }
 void saveCSV(string save){
 	ofstream myfile;
@@ -36,6 +36,6 @@ void saveCSV(string save){
 int main() {
 	string test = "ha noith u";
 	test =readCSV();
-	cout<<test<<endl;
+	cout<<"test: "<<test<<endl;
 	return 0;
 }
