@@ -17,7 +17,7 @@ string readCSV(){
 	myfile.open("test.csv");
 	for(int i = 0;myfile.good(); i++){
 		getline(myfile, line, ',');
-		input[i]=line[0];
+		input = input + line[0];
 		cout<<i<<": "<<input[i]<<endl;
 	}
 	cout<<"input: "<<input<<endl;
