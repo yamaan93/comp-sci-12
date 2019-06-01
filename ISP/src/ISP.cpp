@@ -18,9 +18,7 @@ string readCSV(){
 	for(int i = 0;myfile.good(); i++){
 		getline(myfile, line, ',');
 		input = input + line[0];
-		cout<<i<<": "<<input[i]<<endl;
 	}
-	cout<<"input: "<<input<<endl;
 	myfile.close();
 	return input;
 }
@@ -35,7 +33,6 @@ void saveCSV(string save){
 }
 int main() {
 	string test = "ha noith u";
-	test =readCSV();
-	cout<<"test: "<<test<<endl;
+	cout<<readCSV();
 	return 0;
 }
