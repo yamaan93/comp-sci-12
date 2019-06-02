@@ -10,13 +10,14 @@ private:
 	int people_count;
 
 public:
+	string bookname;
 	Book();
 	Book(string type);
 	void saveCSV(Person* save);
 	Person readCSV();
 	Person array[];
 	friend Book operator +(const Book &a, const Book &b);
-	friend Book operator <<();
+	friend Book operator <<(const Book &a,const Book &b);
 	~Book();
 };
 #endif
