@@ -10,8 +10,9 @@ private:
 	int people_count;
 
 public:
+	int type;
 	string bookname;
-	Book();
+	Book(string bookin,);
 	Book(string type);
 	void saveCSV(Person* save);
 	Person readCSV();

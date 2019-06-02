@@ -4,6 +4,8 @@
 #include <fstream>
 #include "Person.h"
 
+Book::Book()
+
 void Book::saveCSV(Person* save){
 	string savename = bookname + ".csv";
 	ofstream myfile;
