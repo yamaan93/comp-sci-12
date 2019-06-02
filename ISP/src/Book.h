@@ -17,6 +17,6 @@ public:
 	Person array[];
 	friend Book operator +(const Book &a, const Book &b);
 	friend Book operator <<();
-
+	~Book();
 };
 #endif
