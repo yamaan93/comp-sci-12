@@ -11,3 +11,4 @@ Person::Person(string name1, string name2, int age1){
 	age = age1;
 	type = 0;
 }
+

@@ -14,8 +14,9 @@
 using namespace std;
 
 int main() {
-	Person yamaan();
+	Person yamaan("yamaan", "bakir", 16);
+	yamaan.print();
 	string name = "your";
-	Book yeet(name);
+	//Book yeet(name);
 	return 0;
 }
