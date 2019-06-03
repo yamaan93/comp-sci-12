@@ -8,7 +8,7 @@
 #ifndef BOOK_H_
 #define BOOK_H_
 #include <iostream>
-#include "Person.h"
+#include "Persons.h"
 using namespace std;
 class Book {
 private:
@@ -23,13 +23,18 @@ public:
 		people_count = 0;
 		cout<<"c++ sucks"<<endl;
 	}
-//	Book(string bookin,int typein);
-	void saveCSV(Person* save);
+	Book(string bookin,int typein){
+		bookname = bookin;
+		type = typein;
+		people_count = 0;
+		cout<<"c++ sucks"<<endl;
+	}
+	void saveCSV();
 	void readCSV();
-	//Person array[100];
+	Persons array[100];
 	friend Book operator +(const Book &a, const Book &b);
 	friend Book operator <<(const Book &a,const Book &b);
-	void addPerson(Person a);
+	void addPerson(string name1, string name2,int age1);
 
 	virtual ~Book();
 };

@@ -6,6 +6,7 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 #include "Book.h"
+#include "Persons.h"
 #include <iostream>
 #include <string.h>
 #include <fstream>
@@ -15,6 +16,8 @@
 using namespace std;
 
 int main() {
-	Book gay("hmar");
+	Book paper("book uno");
+	paper.addPerson("kusha","potato",18);
+
 	return 0;
 }
