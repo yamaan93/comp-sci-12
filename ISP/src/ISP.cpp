@@ -9,30 +9,13 @@
 #include <iostream>
 #include <string.h>
 #include <fstream>
+#include "Book.h"
+#include "Person.h"
 using namespace std;
-string readCSV(){
-	string input;
-	string line;
-	ifstream myfile;
-	myfile.open("test.csv");
-	for(int i = 0;myfile.good(); i++){
-		getline(myfile, line, ',');
-		input = input + line[0];
-	}
-	myfile.close();
-	return input;
-}
-void saveCSV(string save){
-	ofstream myfile;
-	myfile.open("test.csv");
-	for(int i = 0; i<save.length(); i++){
-		myfile<<save[i]<<",";
-	}
-	myfile.close();
 
-}
 int main() {
-	string test = "ha noith u";
-	cout<<readCSV();
+	Person yamaan();
+	string name = "your";
+	Book yeet(name);
 	return 0;
 }

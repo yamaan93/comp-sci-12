@@ -12,13 +12,15 @@ private:
 public:
 	int type;
 	string bookname;
-	Book(string bookin,);
-	Book(string type);
+	Book();
+	Book(string bookin);
+	Book(string bookin,int typein);
 	void saveCSV(Person* save);
-	Person readCSV();
-	Person array[];
+	void readCSV();
+	//Person array[100];
 	friend Book operator +(const Book &a, const Book &b);
 	friend Book operator <<(const Book &a,const Book &b);
+	void addPerson(Person a);
 	~Book();
 };
 #endif

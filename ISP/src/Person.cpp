@@ -3,6 +3,7 @@
 #include <string.h>
 #include <fstream>
 #include "Person.h"
+using namespace std;
 
 Person::Person(string name1, string name2, int age1){
 	first_name =name1;
