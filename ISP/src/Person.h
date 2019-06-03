@@ -1,12 +1,11 @@
-#ifndef PERSON_H_
-#define PERSON_H_
+#ifndef PERSON_H
+#define PERSON_H
 #include <iostream>
 #include <string.h>
 #include <fstream>
 using namespace std;
-class Person{
-private:
 
+class Person{
 
 public:
 	Person(string name1, string name2, int age);
@@ -19,7 +18,6 @@ public:
 	~Person();
 
 };
-
-
-
 #endif
+
+

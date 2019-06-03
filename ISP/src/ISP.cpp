@@ -5,18 +5,16 @@
 // Copyright   : dont copy plz
 // Description : Hello World in C++, Ansi-style
 //============================================================================
-
+#include "Book.h"
 #include <iostream>
 #include <string.h>
 #include <fstream>
-#include "Book.h"
-#include "Person.h"
+
+// fix all your problems using the built in new class button cause c++ is hot garbage
+
 using namespace std;
 
 int main() {
-	Person yamaan("yamaan", "bakir", 16);
-	yamaan.print();
-	string name = "your";
-	//Book yeet(name);
+	Book gay("hmar");
 	return 0;
 }
