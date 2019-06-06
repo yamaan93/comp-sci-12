@@ -17,8 +17,7 @@ using namespace std;
 
 int main() {
 	Book paper("book uno");
-	paper.addPerson("kusha","potato",25);
-	paper.saveCSV();
 	paper.readCSV();
+	paper.print();
 	return 0;
 }

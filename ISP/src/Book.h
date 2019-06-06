@@ -17,6 +17,7 @@ private:
 public:
 	int type;
 	string bookname;
+	void print();
 	Book(string bookin){
 		bookname = bookin;
 		type = 0;
