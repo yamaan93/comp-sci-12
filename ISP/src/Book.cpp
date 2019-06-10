@@ -78,6 +78,7 @@ void Book::readCSV() {
 void Book::delete_person(int person){
 	for (int i = person; i < people_count; ++i)
 	    array[i] = array[i + 1];
+	people_count--;
 }
 Book::~Book() {
 	// TODO Auto-generated destructor stub
