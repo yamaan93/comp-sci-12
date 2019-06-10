@@ -32,6 +32,7 @@ public:
 	}
 	void saveCSV();
 	void readCSV();
+	void delete_person(int person);
 	Persons array[100];
 	friend Book operator +(const Book &a, const Book &b);
 	friend Book operator <<(const Book &a,const Book &b);

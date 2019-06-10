@@ -10,22 +10,25 @@
 #include <string.h>
 #include <fstream>
 void Book::print(){
-	for(int i = 0; i<2;i++){
+	cout<<"person count: "<<people_count<<endl;
+	for(int i = 0; i<people_count;i++){
 		cout<<i<<": ";
 		cout<<array[i].first_name<<" "<<array[i].last_name<<" "<<array[i].age<<endl;
 	}
 }
 void Book::addPerson(string name1, string name2, int age1) {
+
 	array[people_count].first_name = name1;
 	array[people_count].last_name = name2;
 	array[people_count].age = age1;
 	people_count++;
 }
 void Book::saveCSV() {
+	cout<<"i made it mom"<<endl;
 	string savename = bookname + ".csv";
 	ofstream myfile;
 	myfile.open(savename);
-	for(int i=0;i<people_count+1;i++){
+	for(int i=0;i<people_count;i++){
 	myfile << array[i].first_name << "," << array[i].last_name << ","
 			<< array[i].age << endl;
 	}
@@ -41,6 +44,7 @@ void Book::readCSV() {
 	myfile.open(savename);
 	for(int i = 0;myfile.good(); i++){
 		if (tick == 3){
+			people_count++;
 			count++;
 			tick =0;
 
@@ -70,6 +74,10 @@ void Book::readCSV() {
 	for(int i=0; i <3; i++){
 
 	}
+}
+void Book::delete_person(int person){
+	for (int i = person; i < people_count; ++i)
+	    array[i] = array[i + 1];
 }
 Book::~Book() {
 	// TODO Auto-generated destructor stub
