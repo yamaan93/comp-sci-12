@@ -18,18 +18,8 @@ public:
 	int type;
 	string bookname;
 	void print();
-	Book(string bookin){
-		bookname = bookin;
-		type = 0;
-		people_count = 0;
-		cout<<"c++ sucks"<<endl;
-	}
-	Book(string bookin,int typein){
-		bookname = bookin;
-		type = typein;
-		people_count = 0;
-		cout<<"c++ sucks"<<endl;
-	}
+	Book(string bookin);
+	Book(string bookin,int typein);
 	void saveCSV();
 	void readCSV();
 	void delete_person(int person);

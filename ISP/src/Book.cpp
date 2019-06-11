@@ -9,6 +9,22 @@
 #include <iostream>
 #include <string.h>
 #include <fstream>
+//construtors
+Book::Book(string bookin){
+	bookname = bookin;
+	type = 0;
+	people_count = 0;
+	cout<<"c++ sucks"<<endl;
+}
+Book::Book(string bookin,int typein){
+	bookname = bookin;
+	type = typein;
+	people_count = 0;
+	cout<<"c++ sucks"<<endl;
+}
+//*****************************************************
+
+
 void Book::print(){
 	cout<<"person count: "<<people_count<<endl;
 	for(int i = 0; i<people_count;i++){
