@@ -67,11 +67,13 @@ int main() {
 	return 0;
 }
 void new_book(string name){
-
+	library[library_count] = new Book(name);
 }
 void open_book(int selection){
 
 }
 void delete_book(int selection){
-
+	for (int i = selection; i < library_count; ++i)
+		    library[i] = library[i + 1];
+		library_count--;
 }
