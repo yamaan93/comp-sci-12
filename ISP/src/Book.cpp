@@ -107,16 +107,19 @@ void  Book::open(){
 		int age;
 		cout<<"enter first name:  ";
 		cin>>first;
+		cout<<endl;
 		cout<<"enter last name:  ";
 		cin>>last;
+		cout<<endl;
 		cout<<"enter age:  ";
 		cin>>age;
+		cout<<endl;
 		addPerson(first,last,age);
 		}
 		if(input ==2){
 		int selection;
 		cout<<"enter the number of the person you want to delete:  ";
-		cin<<selection;
+		cin>>selection;
 		delete_person(selection);
 		}
 		if(input ==3){
@@ -124,6 +127,9 @@ void  Book::open(){
 			int inp;
 			cin>>inp;
 
+		}
+		else{
+			cout<<"incorrect command"<<endl;
 		}
 }
 Book::~Book() {
