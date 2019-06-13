@@ -96,6 +96,36 @@ void Book::delete_person(int person){
 	    array[i] = array[i + 1];
 	people_count--;
 }
+void  Book::open(){
+	print();
+	cout<<"\n 1. add person \n 2. delete person \n 3. edit person"<<endl;
+	int input;
+	cin>>input;
+	if(input== 1){
+		string first;
+		string last;
+		int age;
+		cout<<"enter first name:  ";
+		cin>>first;
+		cout<<"enter last name:  ";
+		cin>>last;
+		cout<<"enter age:  ";
+		cin>>age;
+		addPerson(first,last,age);
+		}
+		if(input ==2){
+		int selection;
+		cout<<"enter the number of the person you want to delete:  ";
+		cin<<selection;
+		delete_person(selection);
+		}
+		if(input ==3){
+			cout<<"what do you wanna change? \n 1. first name \n 2. last name \n 3. age"<<endl;
+			int inp;
+			cin>>inp;
+
+		}
+}
 Book::~Book() {
 	// TODO Auto-generated destructor stub
 }

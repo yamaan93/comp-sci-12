@@ -27,6 +27,7 @@ public:
 	friend Book operator +(const Book &a, const Book &b);
 	friend Book operator <<(const Book &a,const Book &b);
 	void addPerson(string name1, string name2,int age1);
+	void open();
 
 	virtual ~Book();
 };

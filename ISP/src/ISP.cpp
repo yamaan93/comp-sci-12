@@ -71,6 +71,27 @@ void new_book(string name){
 }
 void open_book(int selection){
 	library[selection]->print();
+	cout<<"\n 1. add person \n 2. delete person \n 3. edit person"<<endl;
+	int input;
+	cin>>input;
+	if(input== 1){
+		string first;
+		string last;
+		int age;
+		cout<<"enter first name:  ";
+		cin>>first;
+		cout<<"enter last name:  ";
+		cin>>last;
+		cout<<"enter age:  ";
+		cin>>age;
+		library[selection]->addPerson(first,last,age);
+	}
+	if(input ==2){
+
+	}
+	if(input ==3){
+
+	}
 }
 void delete_book(int selection){
 	for (int i = selection; i < library_count; ++i)
