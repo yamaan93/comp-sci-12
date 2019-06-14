@@ -63,6 +63,10 @@ int main() {
 		if(input ==4){
 			// put the dumb book + book;
 		}
+		else{
+					cout<<"incorrect command"<<endl;
+
+		}
 	}
 	return 0;
 }

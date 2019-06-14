@@ -97,6 +97,7 @@ void Book::delete_person(int person){
 	people_count--;
 }
 void  Book::open(){
+	readCSV();
 	print();
 	cout<<"\n 1. add person \n 2. delete person \n 3. edit person"<<endl;
 	int input;
@@ -123,14 +124,37 @@ void  Book::open(){
 		delete_person(selection);
 		}
 		if(input ==3){
+			cout<<"enter the number of the person you wanna edit";
+			int selection;
+			cin>>selection;
+			cout<<endl;
 			cout<<"what do you wanna change? \n 1. first name \n 2. last name \n 3. age"<<endl;
 			int inp;
 			cin>>inp;
+			if(inp ==1){
+				cout<<"enter new name:  ";
+				string newname;
+				cin>>newname;
+				array[selection].first_name = newname;
+			}
+			if(inp ==2){
+				cout<<"enter new name:  ";
+				string newname;
+				cin>>newname;
+				array[selection].last_name = newname;
+			}
+			if(inp ==3){
+				cout<<"enter new name:  ";
+				int newage;
+				cin>>newage;
+				array[selection].age = newage;
+			}
 
 		}
 		else{
 			cout<<"incorrect command"<<endl;
 		}
+		saveCSV();
 }
 Book::~Book() {
 	// TODO Auto-generated destructor stub
