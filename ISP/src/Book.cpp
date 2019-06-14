@@ -11,6 +11,7 @@
 #include <fstream>
 //construtors
 Book::Book(string bookin){
+	readCSV();
 	bookname = bookin;
 	type = 0;
 	people_count = 0;
@@ -97,9 +98,9 @@ void Book::delete_person(int person){
 	people_count--;
 }
 void  Book::open(){
-	readCSV();
+
 	print();
-	cout<<"\n 1. add person \n 2. delete person \n 3. edit person"<<endl;
+	cout<<"\n 1. add person \n 2. delete person \n 3. edit person \n 4. save"<<endl;
 	int input;
 	cin>>input;
 	if(input== 1){
@@ -148,6 +149,10 @@ void  Book::open(){
 				int newage;
 				cin>>newage;
 				array[selection].age = newage;
+			}
+			if(inp ==4){
+				saveCSV();
+
 			}
 
 		}

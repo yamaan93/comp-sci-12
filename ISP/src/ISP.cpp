@@ -7,6 +7,7 @@
 //============================================================================
 #include "Book.h"
 #include "Persons.h"
+#include "Work.h"
 #include <iostream>
 #include <string.h>
 #include <fstream>
@@ -15,7 +16,7 @@
 using namespace std;
 
 Book *library[5];
-int library_count=0;
+int library_count=1;
 
 void new_book(string name);
 void open_book(int selection);
@@ -27,6 +28,7 @@ void list_books(){
 }
 int main() {
 	library[0] = new Book("personal");
+	library[1] = new Work("work");
 	library_count++;
 	while(true){
 		int input=0;
@@ -38,21 +40,12 @@ int main() {
 		else
 			cout<< "you have no books to show! its empty in here, just like your heart \n \n"<<endl;
 		cout<<"what would you like to do? \n"<<endl;
-		cout<<"1. create new book \n 2. open book \n 3. delete book \n 4. merge books \n"<<endl;
-		cin>>input;
-
-		if(input== 2){
+		cout<<"1. which book would you like to open?"<<endl;
 			list_books();
 			cout<<"please enter the number of the book you would like to open"<<endl;
-			int selecter= 10000;
+			int selecter;
 			cin>>selecter;
 			open_book(selecter);
-		}
-
-		else{
-					cout<<"incorrect command"<<endl;
-
-		}
 	}
 	return 0;
 }
