@@ -10,10 +10,10 @@
 #include <iostream>
 #include <string.h>
 #include <fstream>
-
+#include <filesystem>
 // fix all your problems using the built in new class button cause c++ is hot garbage
-
 using namespace std;
+
 Book *library[5];
 int library_count=0;
 
@@ -26,7 +26,7 @@ void list_books(){
 				}
 }
 int main() {
-	library[0] = new Book("big");
+	library[0] = new Book("personal");
 	library_count++;
 	while(true){
 		int input=0;
@@ -40,12 +40,7 @@ int main() {
 		cout<<"what would you like to do? \n"<<endl;
 		cout<<"1. create new book \n 2. open book \n 3. delete book \n 4. merge books \n"<<endl;
 		cin>>input;
-		if (input == 1){
-			cout<<" please name the new book: "<<endl;
-			string name = "";
-			cin>>name;
-			new_book(name);
-		}
+
 		if(input== 2){
 			list_books();
 			cout<<"please enter the number of the book you would like to open"<<endl;
@@ -53,16 +48,7 @@ int main() {
 			cin>>selecter;
 			open_book(selecter);
 		}
-		if(input == 3){
-			list_books();
-			cout<<"please enter the number of the book you would like to delete"<<endl;
-			int selecter= 10000;
-			cin>>selecter;
-			delete_book(selecter);
-		}
-		if(input ==4){
-			// put the dumb book + book;
-		}
+
 		else{
 					cout<<"incorrect command"<<endl;
 

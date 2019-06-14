@@ -73,7 +73,7 @@ void Book::readCSV() {
 	//cout<<tick<<count<<line<<endl;
 	if(tick==0){
 		array[count].first_name= line;
-		//cout<<line<<endl;
+		cout<<line<<endl;
 	}
 	if(tick==1){
 		array[count].last_name= line;
@@ -155,6 +155,7 @@ void  Book::open(){
 			cout<<"incorrect command"<<endl;
 		}
 		saveCSV();
+
 }
 Book::~Book() {
 	// TODO Auto-generated destructor stub

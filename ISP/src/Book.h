@@ -18,6 +18,9 @@ public:
 	int type;
 	string bookname;
 	void print();
+	Book(){
+
+	}
 	Book(string bookin);
 	Book(string bookin,int typein);
 	void saveCSV();
