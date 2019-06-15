@@ -8,6 +8,7 @@
 #include "Book.h"
 #include "Persons.h"
 #include "Work.h"
+#include "Familly.h"
 #include <iostream>
 #include <string.h>
 #include <fstream>
@@ -28,7 +29,7 @@ void list_books(){
 int main() {
 	library[0] = new Book("personal");
 	library[1] = new Work("work");
-	library[2] = new Work("temp");
+	library[2] = new Familly("familly");
 
 	for(int i =0; i<3;i++){
 		library[i]->readCSV();
