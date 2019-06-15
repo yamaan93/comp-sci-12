@@ -30,11 +30,12 @@ int main() {
 	library[0] = new Book("personal");
 	library[1] = new Work("work");
 	library[2] = new Familly("familly");
-
+//setting up books
 	for(int i =0; i<3;i++){
 		library[i]->readCSV();
 	}
 	while(true){
+		//select the book you wanna open
 		cout<<"welcome to address book++"<<endl;
 		cout<<"here are your books"<<endl;
 		cout<<"what would you like to do? \n"<<endl;
@@ -43,7 +44,7 @@ int main() {
 			cout<<"please enter the number of the book you would like to open"<<endl;
 			int selecter;
 			cin>>selecter;
-			open_book(selecter);
+			open_book(selecter);//open book function call
 	}
 	return 0;
 }
