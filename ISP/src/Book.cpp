@@ -11,11 +11,10 @@
 #include <fstream>
 //construtors
 Book::Book(string bookin){
-	readCSV();
 	bookname = bookin;
+	//readCSV();
 	type = 0;
 	people_count = 0;
-	cout<<"c++ sucks"<<endl;
 }
 Book::Book(string bookin,int typein){
 	bookname = bookin;
@@ -88,9 +87,6 @@ void Book::readCSV() {
 	}
 
 	myfile.close();
-	for(int i=0; i <3; i++){
-
-	}
 }
 void Book::delete_person(int person){
 	for (int i = person; i < people_count; ++i)
@@ -150,16 +146,16 @@ void  Book::open(){
 				cin>>newage;
 				array[selection].age = newage;
 			}
-			if(inp ==4){
-				saveCSV();
 
-			}
 
 		}
+		if(input ==4){
+						saveCSV();
+
+					}
 		else{
 			cout<<"incorrect command"<<endl;
 		}
-		saveCSV();
 
 }
 Book::~Book() {

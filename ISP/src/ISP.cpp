@@ -16,29 +16,26 @@
 using namespace std;
 
 Book *library[5];
-int library_count=1;
 
-void new_book(string name);
+
+
 void open_book(int selection);
-void delete_book(int selection);
 void list_books(){
-	for(int i =0; i <library_count; i++){
-					cout<<i<<": "<<library[i]->bookname<<endl;
-				}
+	for(int i =0; i <3; i++){
+		cout<<i<<": "<<library[i]->bookname<<endl;
+	}
 }
 int main() {
 	library[0] = new Book("personal");
 	library[1] = new Work("work");
-	library_count++;
+	library[2] = new Work("temp");
+
+	for(int i =0; i<3;i++){
+		library[i]->readCSV();
+	}
 	while(true){
-		int input=0;
 		cout<<"welcome to address book++"<<endl;
-		if(library_count>0){
-			cout<<"here are your books"<<endl;
-			list_books();
-		}
-		else
-			cout<< "you have no books to show! its empty in here, just like your heart \n \n"<<endl;
+		cout<<"here are your books"<<endl;
 		cout<<"what would you like to do? \n"<<endl;
 		cout<<"1. which book would you like to open?"<<endl;
 			list_books();
@@ -49,15 +46,8 @@ int main() {
 	}
 	return 0;
 }
-void new_book(string name){
-	library[library_count] = new Book(name);
-	library_count++;
-}
+
 void open_book(int selection){
 	library[selection]->open();
 }
-void delete_book(int selection){
-	for (int i = selection; i < library_count; ++i)
-		    library[i] = library[i + 1];
-		library_count--;
-}
+
